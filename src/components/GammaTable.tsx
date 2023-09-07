@@ -8,19 +8,18 @@ export default function GammaTable() {
   return (
     <div className="table-container">
       <h2>Gamma Stats</h2>
-
       <table>
         <thead>
           <tr>
             {["Measure", ...uniqueAlcohols(wineData)].map((e, i) => (
-              <th>{i === 0 ? e : `Class ${e}`}</th>
+              <th key={i}>{i === 0 ? e : `Class ${e}`}</th>
             ))}
           </tr>
         </thead>
         <tbody>
           <tr>
             {["Gamma Mean", ...uniqueAlcohols(wineData)].map((e, i) => (
-              <td>
+              <td key={i}>
                 {i === 0
                   ? e
                   : gammaStats({
@@ -33,7 +32,7 @@ export default function GammaTable() {
           </tr>
           <tr>
             {["Gamma Median", ...uniqueAlcohols(wineData)].map((e, i) => (
-              <td>
+              <td key={i}>
                 {i === 0
                   ? e
                   : gammaStats({
@@ -46,7 +45,7 @@ export default function GammaTable() {
           </tr>
           <tr>
             {["Gamma Mode", ...uniqueAlcohols(wineData)].map((e, i) => (
-              <td>
+              <td key={i}>
                 {i === 0
                   ? e
                   : gammaStats({

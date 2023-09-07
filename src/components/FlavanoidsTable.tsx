@@ -11,14 +11,14 @@ export default function FlavanoidsTable() {
         <thead>
           <tr>
             {["Measure", ...uniqueAlcohols(wineData)].map((e, i) => (
-              <th>{i === 0 ? e : `Class ${e}`}</th>
+              <th key={i}>{i === 0 ? e : `Class ${e}`}</th>
             ))}
           </tr>
         </thead>
         <tbody>
           <tr>
             {["Flavanoids Mean", ...uniqueAlcohols(wineData)].map((e, i) => (
-              <td>
+              <td key={i}>
                 {i === 0
                   ? e
                   : wineDataStats({
@@ -31,7 +31,7 @@ export default function FlavanoidsTable() {
           </tr>
           <tr>
             {["Flavanoids Median", ...uniqueAlcohols(wineData)].map((e, i) => (
-              <td>
+              <td key={i}>
                 {i === 0
                   ? e
                   : wineDataStats({
@@ -44,7 +44,7 @@ export default function FlavanoidsTable() {
           </tr>
           <tr>
             {["Flavanoids Mode", ...uniqueAlcohols(wineData)].map((e, i) => (
-              <td>
+              <td key={i}>
                 {i === 0
                   ? e
                   : wineDataStats({
